@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t kavianba/react-test -f ./client/Dockerfile
+  - docker build -t kavianba/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true kavianba/react-test npm test -- --coverage
